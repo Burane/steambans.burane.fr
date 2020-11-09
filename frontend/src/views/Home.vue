@@ -2,7 +2,7 @@
   <div>
     <section class="row">
       <div class="container">
-        <div class="col s12 m3" v-for="profile in profiles" :key="profile._id">
+        <div class="col s12 m3" v-for="profile in profiles" :key="profile._id" >
           <profileCard v-on:profileDeleted="setProfiles" :profile="profile" />
         </div>
         <div v-if="profiles.length === 0 || !profiles">
@@ -25,7 +25,7 @@ export default {
   },
 
   created() {
-    this.setParameter(this.$route.params.param ?? "all");
+    this.setParameter(this.$route.params.param ?? "banned");
     this.setProfiles();
   },
 

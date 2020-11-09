@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import  CSP from './csp';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 
@@ -15,12 +16,16 @@ async function bootstrap() : Promise<void> {
     }),
   );
 
+  app.setGlobalPrefix('api');
 
   app.enableCors({
     origin: "*",
   });
 
+  app.use(CSP)
+
   await app.listen(3008);
+  console.log(await app.getUrl());
 }
 bootstrap();
  
