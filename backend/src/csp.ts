@@ -5,7 +5,7 @@ let sources = {
     'img-src': ['\'self\'', 'https:', 'data:'],
     'style-src': ['\'self\'', 'https:', '\'unsafe-inline\''],
     'font-src': ['\'self\'', 'https:'],
-    'connect-src': ['\'self\''],
+    'connect-src': ['\'self\'','https:','http:'],
 }
 
 let csp = Object.keys(sources).map(function (key) {
