@@ -26,6 +26,7 @@ async function bootstrap() : Promise<void> {
 
   await app.listen(process.env.PORT ?? 3008);
   console.log(await app.getUrl());
+  console.log(process.env);
 }
 bootstrap();
  

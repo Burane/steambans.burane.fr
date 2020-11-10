@@ -35,14 +35,8 @@ export class SteamAccountService {
         const steam = new Steam();
         const id64: string = await steam.getId64(userLink.userLink);
         const infos = await steam.getInfos(id64);
-        console.log(infos)
-
 
         const createSteamAccountDTO = this.transformToDTO(infos, id64)
-
-        console.log("===================")
-        console.log(createSteamAccountDTO)
-
         const newSteamAccount = await this.steamAccountModel(createSteamAccountDTO);
         return newSteamAccount.save();
     }
@@ -104,7 +98,7 @@ export class SteamAccountService {
 
     async updateAllSteamAccount() {
         
-        console.log("Updating steam accounts");
+        console.log("Updating steam accounts",Date.now());
         const steamAccounts = await this.steamAccountModel.find({ id_64: "76561199025127652"});
         steamAccounts.forEach(steamAccount => {
             this.updateSteamAccount(steamAccount);
@@ -115,7 +109,6 @@ export class SteamAccountService {
     async updateSteamAccount(steamAccount: any) {
         const steam = new Steam();
         const infos = await steam.getInfos(steamAccount.id_64);
-        console.log(infos)
         const date: Date = new Date()
         let bannedDate: Date;
 
