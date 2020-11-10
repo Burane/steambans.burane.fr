@@ -25,7 +25,7 @@ export default {
   },
 
   created() {
-    this.setParameter(this.$route.params.param ?? "banned");
+    this.setParameter(this.$route.params.param ?? "all");
     this.setProfiles();
   },
 

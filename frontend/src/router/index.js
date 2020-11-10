@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeComponent from '@/views/Home';
-// import CreateComponent from '@/components/profile/Create';
-// import FilterBar from '@/components/filterBar/FilterBar';
 
 Vue.use(VueRouter)
 
