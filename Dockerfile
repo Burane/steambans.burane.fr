@@ -24,7 +24,7 @@ COPY frontend/package*.json /usr/src/app/frontend
 RUN npm install
 
 # Copying source files
-COPY frontend/ /usr/src/app/frontend
+COPY frontend/ /usr/src/app/frontend/
 
 # Building app
 RUN npm run build
@@ -40,7 +40,7 @@ COPY backend/package*.json /usr/src/app/backend
 RUN npm install
 
 # Copying source files
-COPY backend/ /usr/src/app/backend
+COPY backend/ /usr/src/app/backend/
 
 # Building app
 RUN npm run build
