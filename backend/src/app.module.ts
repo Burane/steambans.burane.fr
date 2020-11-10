@@ -8,7 +8,7 @@ import { join } from 'path';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/steamBansMonitor', { useNewUrlParser: true }),
+    MongooseModule.forRoot(`mongodb://${process.env.MONGO_HOST ?? "localhost" }:${process.env.MONGO_PORT ?? "27017"}/steamBansMonitor`, { useNewUrlParser: true }),
     SteamAccountModule,
     ScheduleModule.forRoot(),
     ServeStaticModule.forRoot({
