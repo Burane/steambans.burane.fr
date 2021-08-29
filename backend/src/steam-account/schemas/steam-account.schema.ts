@@ -127,7 +127,7 @@ export const SteamAccountSchema = new mongoose.Schema({
         },
         banned_date: {
             type: Date,
-            default: null          
+            default: null
         }
     }
 })
