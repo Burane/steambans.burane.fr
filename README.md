@@ -5,5 +5,5 @@ Merging of frontend and backend
 
 launch :
 
-docker-compose build
+docker-compose build <br>
 docker-compose up
